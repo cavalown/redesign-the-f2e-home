@@ -14,7 +14,6 @@
 
 <script>
 export default {
-  setup() { },
 };
 </script>
 
@@ -34,6 +33,11 @@ export default {
       a {
         text-decoration: none;
         color: #2a99d9;
+      }
+
+      &:hover {
+        font-weight: 500;
+        font-size: 18px;
       }
     }
   }

@@ -9,21 +9,47 @@
       </ul>
       <p>滾動開始</p>
       <div class="hint">
-        <img src="../../assets/images/elements/arrow-down.png" alt="請向下滾動" />
+        <img id="hint-arrow" src="../../assets/images/elements/arrow-down.png" alt="請向下滾動" />
       </div>
     </div>
     <div class="submarine-float">
-      <img class="submarine" src="../../assets/images/elements/submarine1.png" alt="潛水艇" />
-      <img class="water-surface" src="../../assets/images/elements/water.png" alt="潛水艇接處水面" />
+      <img class="submarine" id="submarine" src="../../assets/images/elements/submarine1.png" alt="潛水艇" />
+      <img class="water-surface" src="../../assets/images/elements/water-surface1.png" alt="潛水艇接處水面" />
     </div>
   </div>
 </template>
 
 <script>
+import { gsap } from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import TextPlugin from "gsap/TextPlugin";
 import Navbar from "../Navbar.vue";
 export default {
   components: {
     Navbar,
+  },
+  mounted() {
+    gsap.registerPlugin(ScrollTrigger, TextPlugin);
+    this.arrowRun();
+    this.submarineUpAndDown();
+  },
+  methods: {
+    arrowRun() {
+      gsap.to("#hint-arrow", {
+        y: 30,
+        duration: 1,
+        repeat: -1,
+      });
+    },
+    submarineUpAndDown() {
+      gsap.to("#submarine", {
+        y: 20,
+        duration: 1.2,
+        repeat: -1,
+        yoyo: true,
+      });
+    },
+    birdsFly() { },
   },
 };
 </script>
@@ -32,6 +58,9 @@ export default {
 .home1 {
   height: 981px;
   background-image: url("../../assets/images/background/background1.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: absolute;
 
   .title {
     h1 {
@@ -79,7 +108,7 @@ export default {
 
     .water-surface {
       position: absolute;
-      top: 580px;
+      top: 740px;
       left: 255px;
     }
   }

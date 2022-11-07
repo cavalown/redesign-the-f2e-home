@@ -1,16 +1,14 @@
 <template>
   <div class="home">
-    <Home1 />
-    <Home2 />
-    <Home3 />
-    <Home4 />
-    <Home5 />
-    <Home6 />
-    <Home7 />
-    <Home8 />
-    <Home9 />
-    <!-- <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" /> -->
+    <div class="start-water panel">
+      <Home1 />
+    </div>
+    <div class="in-water panel">
+      <Home2 />
+    </div>
+    <div class="end-water panel">
+      <Home3 />
+    </div>
   </div>
 </template>
 
@@ -22,12 +20,6 @@ import TextPlugin from "gsap/TextPlugin";
 import Home1 from "../components/homeComponents/Home1.vue";
 import Home2 from "../components/homeComponents/Home2.vue";
 import Home3 from "../components/homeComponents/Home3.vue";
-import Home4 from "../components/homeComponents/Home4.vue";
-import Home5 from "../components/homeComponents/Home5.vue";
-import Home6 from "../components/homeComponents/Home6.vue";
-import Home7 from "../components/homeComponents/Home7.vue";
-import Home8 from "../components/homeComponents/Home8.vue";
-import Home9 from "../components/homeComponents/Home9.vue";
 
 export default {
   name: "Home",
@@ -35,19 +27,34 @@ export default {
     Home1,
     Home2,
     Home3,
-    Home4,
-    Home5,
-    Home6,
-    Home7,
-    Home8,
-    Home9,
   },
-  created() {
+  mounted() {
     gsap.registerPlugin(ScrollTrigger, TextPlugin);
+    this.changeBackground();
+  },
+  methods: {
+    changeBackground() {
+      // Dip into water
+      gsap.utils.toArray(".panel").forEach((panel) => {
+        ScrollTrigger.create({
+          trigger: panel,
+          start: "top top",
+          pin: true,
+          pinSpacing: false,
+        });
+      });
+      // ScrollTrigger.create({
+      //   snap: 3 / 4,
+      // });
+    },
   },
 };
 </script>
 
 <style lang="scss">
-
+.home {
+  position: relative;
+  width: 100vw;
+  height: auto;
+}
 </style>
