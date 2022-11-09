@@ -7,7 +7,7 @@
       <Home2 />
     </div>
     <div class="end-water panel" id="panel3">
-      <Home3 />
+      <!-- <Home3 /> -->
     </div>
   </div>
 </template>
@@ -19,14 +19,14 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import TextPlugin from "gsap/TextPlugin";
 import Home1 from "../components/homeComponents/Home1.vue";
 import Home2 from "../components/homeComponents/Home2.vue";
-import Home3 from "../components/homeComponents/Home3.vue";
+// import Home3 from "../components/homeComponents/Home3.vue";
 
 export default {
   name: "Home",
   components: {
     Home1,
     Home2,
-    Home3,
+    // Home3,
   },
   mounted() {
     gsap.registerPlugin(ScrollTrigger, TextPlugin);
@@ -74,9 +74,9 @@ export default {
 
 <style lang="scss">
 .home {
-  position: relative;
+  position: absolute;
   width: 100vw;
-  height: auto;
+  height: 100vh;
 
   .panel {
     position: relative;

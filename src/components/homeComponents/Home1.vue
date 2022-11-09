@@ -102,7 +102,7 @@ export default {
   background-image: url("../../assets/images/background/background1.svg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 80% center;
+  background-position: center;
   position: relative;
 
   // @include pad {
