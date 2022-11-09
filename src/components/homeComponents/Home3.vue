@@ -1,5 +1,6 @@
 <template>
   <div class="home3">
+    <h1>鑽石級贊助商</h1>
     <div class="submarine-float">
       <img class="submarine" id="submarine" src="../../assets/images/elements/submarine1.png" alt="潛水艇" />
       <img class="water-surface" src="../../assets/images/elements/water-surface2.png" alt="潛水艇接處水面" />
@@ -20,13 +21,13 @@
     </div>
     <div class="penguins">
       <div class="penguin1">
-        <img class="penguin" src="../../assets/images/elements/penguin1.png" alt="企鵝1">
+        <img class="penguin" src="../../assets/images/elements/penguin1.png" alt="企鵝1" />
       </div>
       <div class="penguin2">
-        <img class="penguin" src="../../assets/images/elements/penguin3.png" alt="企鵝2">
+        <img class="penguin" src="../../assets/images/elements/penguin3.png" alt="企鵝2" />
       </div>
       <div class="penguin3">
-        <img class="penguin" src="../../assets/images/elements/penguin2.png" alt="企鵝3">
+        <img class="penguin" src="../../assets/images/elements/penguin2.png" alt="企鵝3" />
       </div>
     </div>
   </div>
@@ -55,14 +56,14 @@ export default {
     iceFloatUpAndDown() {
       gsap.to("#blockstudio", {
         y: 26,
-        rotate: 25,
+        rotation: 15,
         yoyo: true,
         duration: 2,
         repeat: -1,
       });
       gsap.to("#kdan", {
         y: 22,
-        rotate: 22,
+        rotation: -10,
         yoyo: true,
         duration: 2,
         repeat: -1,
@@ -70,69 +71,82 @@ export default {
       });
       gsap.to("#titan", {
         y: 20,
-        rotate: 18,
+        rotation: 18,
         yoyo: true,
         duration: 2,
         repeat: -1,
         delay: 2,
       });
     },
-    penguinFlap() {
-    }
+    penguinFlap() { },
   },
 };
 </script>
 
 <style lang="scss">
 .home3 {
-  height: 981px;
-  background-image: url("../../assets/images/background/background3.png");
+  height: 100vh;
+  width: 100vw;
+  background-color: #fff;
+  background-image: url("../../assets/images/background/background3.svg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: absolute;
+  background-position: 80% center;
+  position: relative;
+
+  h1 {
+    font-family: "Noto Sans TC", sans-serif;
+    color: #2a99d9;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 47px;
+    position: absolute;
+    top: 254px;
+    left: 46vw;
+  }
 
   .submarine-float {
+
     .submarine {
       position: absolute;
-      top: 580px;
-      left: 255px;
+      bottom: 13vh;
+      left: 20vw;
       height: 218px;
       width: 264px;
+      z-index: 1;
     }
 
     .water-surface {
       position: absolute;
-      top: 780px;
-      left: 255px;
+      bottom: 9.5vh;
+      left: 20.5vw;
     }
   }
 
   .sponsors {
-    width: 620px;
+    position: absolute;
+    width: 540px;
     display: flex;
+    justify-content: space-between;
+    top: 39vh;
+    right: 37vw;
 
     .ice:nth-child(1) {
-      position: absolute;
-      top: 530px;
-      left: 580px;
+      position: relative;
     }
 
     .ice:nth-child(2) {
-      position: absolute;
-      top: 530px;
-      left: 800px;
+      position: relative;
     }
 
     .ice:nth-child(3) {
-      position: absolute;
-      top: 530px;
-      left: 1020px;
+      position: relative;
     }
 
     .ice-water-surface {
       position: absolute;
       top: 100px;
-      right: -30px;
+      right: -20px;
     }
   }
 
@@ -140,25 +154,29 @@ export default {
     position: absolute;
     top: 500px;
     right: 260px;
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
 
     .penguin1 {
       position: absolute;
-      top: 20px;
-      right: 130px;
+      right: 4rem;
+      bottom: 2rem;
     }
 
     .penguin2 {
-      position: absolute;
-      top: -30px;
-      right: 60px;
       transform: scale(0.6, 0.6);
       transform: scaleX(-1);
+      position: absolute;
+      right: -1rem;
+      bottom: 3.3rem;
     }
 
     .penguin3 {
+      position: relative;
       position: absolute;
-      top: -5px;
-      right: 10px;
+      right: -6rem;
+      bottom: 6rem;
     }
   }
 }

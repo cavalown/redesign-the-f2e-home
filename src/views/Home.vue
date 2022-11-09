@@ -1,12 +1,12 @@
 <template>
   <div class="home">
-    <div class="start-water panel">
+    <div class="start-water panel" id="panel1">
       <Home1 />
     </div>
-    <div class="in-water panel">
+    <div class="in-water panel" id="panel2">
       <Home2 />
     </div>
-    <div class="end-water panel">
+    <div class="end-water panel" id="panel3">
       <Home3 />
     </div>
   </div>
@@ -38,13 +38,34 @@ export default {
       gsap.utils.toArray(".panel").forEach((panel) => {
         ScrollTrigger.create({
           trigger: panel,
-          start: "top top",
+          start: "400 top",
+          scrab: true,
           pin: true,
           pinSpacing: false,
         });
       });
+      // gsap.to("#panel1", () => {
+      //   ScrollTrigger.create({
+      //     trigger: "#panel1",
+      //     start: "400 top",
+      //     scrab: true,
+      //     pin: true,
+      //     pinSpacing: false,
+      //   });
+      // });
       // ScrollTrigger.create({
       //   snap: 3 / 4,
+      // });
+      // Float on water
+      // const tl = gsap.timeline();
+      // tl.from("#panel3", { yPercent: -100 });
+      // ScrollTrigger.create({
+      //   animation: tl,
+      //   trigger: "#panel3",
+      //   start: "top top",
+      //   scrub: true,
+      //   pin: true,
+      //   anticipatePin: 1,
       // });
     },
   },
@@ -56,5 +77,9 @@ export default {
   position: relative;
   width: 100vw;
   height: auto;
+
+  .panel {
+    position: relative;
+  }
 }
 </style>

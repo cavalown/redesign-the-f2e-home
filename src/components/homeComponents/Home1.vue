@@ -16,6 +16,32 @@
       <img class="submarine" id="submarine" src="../../assets/images/elements/submarine1.png" alt="潛水艇" />
       <img class="water-surface" src="../../assets/images/elements/water-surface1.png" alt="潛水艇接處水面" />
     </div>
+    <div class="birds">
+      <div class="bird1">
+        <img class="bird-left" src="../../assets/images/elements/bird-left.svg" alt="鳥左翅" />
+        <img class="bird-right" src="../../assets/images/elements/bird-right.svg" alt="鳥右翅" />
+      </div>
+      <div class="bird2">
+        <img class="bird-left" src="../../assets/images/elements/bird-left.svg" alt="鳥左翅" />
+        <img class="bird-right" src="../../assets/images/elements/bird-right.svg" alt="鳥右翅" />
+      </div>
+      <div class="bird3">
+        <img class="bird-left" src="../../assets/images/elements/bird-left.svg" alt="鳥左翅" />
+        <img class="bird-right" src="../../assets/images/elements/bird-right.svg" alt="鳥右翅" />
+      </div>
+      <div class="bird4">
+        <img class="bird-left" src="../../assets/images/elements/bird-left.svg" alt="鳥左翅" />
+        <img class="bird-right" src="../../assets/images/elements/bird-right.svg" alt="鳥右翅" />
+      </div>
+      <div class="bird5">
+        <img class="bird-left" src="../../assets/images/elements/bird-left.svg" alt="鳥左翅" />
+        <img class="bird-right" src="../../assets/images/elements/bird-right.svg" alt="鳥右翅" />
+      </div>
+      <div class="bird6">
+        <img class="bird-left" src="../../assets/images/elements/bird-left.svg" alt="鳥左翅" />
+        <img class="bird-right" src="../../assets/images/elements/bird-right.svg" alt="鳥右翅" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -32,6 +58,7 @@ export default {
     gsap.registerPlugin(ScrollTrigger, TextPlugin);
     this.arrowRun();
     this.submarineUpAndDown();
+    this.birdsFly();
   },
   methods: {
     arrowRun() {
@@ -49,20 +76,42 @@ export default {
         yoyo: true,
       });
     },
-    birdsFly() { },
+    birdsFly() {
+      gsap.to(".bird-left", {
+        rotation: -50,
+        yoyo: true,
+        duration: 0.3,
+        repeat: -1,
+      });
+      gsap.to(".bird-right", {
+        rotation: 50,
+        yoyo: true,
+        duration: 0.3,
+        repeat: -1,
+      });
+    },
   },
 };
 </script>
 
 <style lang="scss">
 .home1 {
-  height: 981px;
-  background-image: url("../../assets/images/background/background1.png");
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  background-image: url("../../assets/images/background/background1.svg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: absolute;
+  background-position: 80% center;
+  position: relative;
+
+  // @include pad {
+  //   background-image: url("../../assets/images/background/background1.svg");
+  // }
 
   .title {
+    margin-top: 166px;
+
     h1 {
       margin-bottom: 35px;
       color: #2a99d9;
@@ -100,16 +149,124 @@ export default {
   .submarine-float {
     .submarine {
       position: absolute;
-      top: 530px;
-      left: 255px;
+      bottom: 21vh;
+      left: 20vw;
       height: 218px;
       width: 264px;
     }
 
     .water-surface {
       position: absolute;
-      top: 740px;
-      left: 255px;
+      bottom: 17.5vh;
+      left: 20.5vw;
+    }
+  }
+
+  .birds {
+    width: 700px;
+    height: 50vh;
+    position: relative;
+    margin: 0 auto;
+    bottom: 17rem;
+
+    .bird1 {
+      width: 30px;
+      position: relative;
+      top: 130px;
+      rotate: 20deg;
+
+      img:nth-child(1) {
+        width: 0.9em;
+        left: 1px;
+      }
+
+      img:nth-child(2) {
+        width: 0.9em;
+      }
+    }
+
+    .bird2 {
+      width: 30px;
+      position: relative;
+      left: 80px;
+      top: 160px;
+      rotate: 10deg;
+
+      img:nth-child(1) {
+        width: 0.9em;
+        left: 1px;
+      }
+
+      img:nth-child(2) {
+        width: 0.9em;
+      }
+    }
+
+    .bird3 {
+      width: 50px;
+      position: relative;
+      left: 120px;
+      top: 10px;
+      rotate: 10deg;
+
+      img:nth-child(1) {
+        width: 1.3em;
+        left: 1px;
+      }
+
+      img:nth-child(2) {
+        width: 1.3em;
+      }
+    }
+
+    .bird4 {
+      width: 50px;
+      position: relative;
+      left: 410px;
+      top: -100px;
+      rotate: 40deg;
+
+      img:nth-child(1) {
+        width: 1.3em;
+        left: 1px;
+      }
+
+      img:nth-child(2) {
+        width: 1.3em;
+      }
+    }
+
+    .bird5 {
+      width: 50px;
+      position: relative;
+      left: 460px;
+      top: -20px;
+      rotate: 30deg;
+
+      img:nth-child(1) {
+        width: 1.3em;
+        left: 1px;
+      }
+
+      img:nth-child(2) {
+        width: 1.3em;
+      }
+    }
+
+    .bird6 {
+      width: 50px;
+      position: relative;
+      left: 560px;
+      top: -50px;
+      rotate: 30deg;
+
+      img:nth-child(1) {
+        width: 1.4em;
+      }
+
+      img:nth-child(2) {
+        width: 1.4em;
+      }
     }
   }
 }
