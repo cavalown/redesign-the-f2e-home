@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/eric-project/precache-manifest.61c8b1a06067904c381d58305ba3fde2.js"
+  "precache-manifest.f6f6e4ad2ada568c810d509fa4ced0e2.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "redesign-the-f2e-home"});
