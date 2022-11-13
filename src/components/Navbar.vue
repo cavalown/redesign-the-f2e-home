@@ -31,6 +31,10 @@ export default {
 }
 
 .navbar {
+  @include phone {
+    z-index: 100000;
+  }
+
   ul {
     display: flex;
     justify-content: flex-end;

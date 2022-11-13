@@ -1,12 +1,15 @@
 <template>
   <div class="home">
-    <div class="start-water panel" id="panel1">
+    <div class="navbar">
+      <Navber />
+    </div>
+    <div class="start-water panel-a" id="panel1">
       <Home1 />
     </div>
-    <div class="in-water panel" id="panel2">
+    <div class="in-water panel panel-a panel-b" id="panel2">
       <Home2 />
     </div>
-    <!-- <div class="end-water panel" id="panel3">
+    <!-- <div class="end-water panel panel-b" id="panel3">
       <Home3 />
     </div> -->
   </div>
@@ -20,22 +23,33 @@ import TextPlugin from "gsap/TextPlugin";
 import Home1 from "../components/homeComponents/Home1.vue";
 import Home2 from "../components/homeComponents/Home2.vue";
 // import Home3 from "../components/homeComponents/Home3.vue";
+import Navber from "../components/Navbar.vue";
 
 export default {
   name: "Home",
   components: {
+    Navber,
     Home1,
     Home2,
     // Home3,
   },
   mounted() {
     gsap.registerPlugin(ScrollTrigger, TextPlugin);
-    this.changeBackground();
+    // this.changeBackground();
   },
   methods: {
     changeBackground() {
       // Dip into water
-      gsap.utils.toArray(".panel").forEach((panel) => {
+      gsap.utils.toArray(".panel-a").forEach((panel) => {
+        ScrollTrigger.create({
+          trigger: panel,
+          start: "400 top",
+          scrab: true,
+          pin: true,
+          pinSpacing: false,
+        });
+      });
+      gsap.utils.toArray(".panel-b").forEach((panel) => {
         ScrollTrigger.create({
           trigger: panel,
           start: "400 top",
@@ -73,10 +87,27 @@ export default {
 </script>
 
 <style lang="scss">
+@mixin pad {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media (max-width: 576px) {
+    @content;
+  }
+}
+
 .home {
-  position: absolute;
   width: 100vw;
   height: 100vh;
+
+  .navbar {
+    width: 100%;
+    position: fixed;
+    background: none;
+  }
 
   .panel {
     position: relative;

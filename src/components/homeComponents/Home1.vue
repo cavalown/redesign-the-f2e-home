@@ -1,6 +1,5 @@
 <template>
   <div class="home1">
-    <Navbar />
     <div class="title">
       <h1>互動網頁設計</h1>
       <ul>
@@ -49,11 +48,7 @@
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import TextPlugin from "gsap/TextPlugin";
-import Navbar from "../Navbar.vue";
 export default {
-  components: {
-    Navbar,
-  },
   mounted() {
     gsap.registerPlugin(ScrollTrigger, TextPlugin);
     this.arrowRun();
@@ -110,14 +105,12 @@ export default {
 .home1 {
   width: 100vw;
   height: 100vh;
+  overflow-x: hidden;
   background-color: #fff;
-  background: url("../../assets/images/background/background1.svg");
+  background: url("../../assets/images/background/background1.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  position: relative;
-
-  @include pad {}
 
   @include phone {
     // url(img_flwr.gif) right bottom no-repeat,url(paper.gif) left top repeat;
@@ -129,14 +122,14 @@ export default {
   }
 
   .title {
-    margin-top: 166px;
+    padding-top: 206px;
 
     @include pad {
-      margin-top: 80px;
+      padding-top: 140px;
     }
 
     @include phone {
-      margin-top: 100px;
+      padding-top: 100px;
     }
 
     h1 {
@@ -145,7 +138,7 @@ export default {
       font-size: 36px;
       font-weight: 400;
       line-height: 18px;
-      font-family: 'Noto Sans TC', sans-serif;
+      font-family: "Noto Sans TC", sans-serif;
 
       @include phone {
         margin-bottom: 0;

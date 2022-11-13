@@ -2,32 +2,77 @@
   <div class="home3">
     <h1>鑽石級贊助商</h1>
     <div class="submarine-float">
-      <img class="submarine" id="submarine" src="../../assets/images/elements/submarine1.png" alt="潛水艇" />
-      <img class="water-surface" src="../../assets/images/elements/water-surface2.png" alt="潛水艇接處水面" />
+      <img
+        class="submarine"
+        id="submarine"
+        src="../../assets/images/elements/submarine1.png"
+        alt="潛水艇"
+      />
+      <img
+        class="water-surface"
+        src="../../assets/images/elements/water-surface2.png"
+        alt="潛水艇接處水面"
+      />
     </div>
     <div class="sponsors">
       <div class="ice">
-        <img id="blockstudio" src="../../assets/images/elements/blockstudio_logo.png" alt="板塊設計" />
-        <img class="ice-water-surface" src="../../assets/images/elements/blockstudio-water-surface.png" alt="水面" />
+        <img
+          id="blockstudio"
+          src="../../assets/images/elements/blockstudio_logo.png"
+          alt="板塊設計"
+        />
+        <img
+          class="ice-water-surface"
+          src="../../assets/images/elements/blockstudio-water-surface.png"
+          alt="水面"
+        />
       </div>
       <div class="ice">
-        <img id="kdan" src="../../assets/images/elements/kdan_logo.png" alt="泰坦科技" />
-        <img class="ice-water-surface" src="../../assets/images/elements/kdan-water-surface.png" alt="水面" />
+        <img
+          id="kdan"
+          src="../../assets/images/elements/kdan_logo.png"
+          alt="泰坦科技"
+        />
+        <img
+          class="ice-water-surface"
+          src="../../assets/images/elements/kdan-water-surface.png"
+          alt="水面"
+        />
       </div>
       <div class="ice">
-        <img id="titan" src="../../assets/images/elements/titan_logo.png" alt="kdan" />
-        <img class="ice-water-surface" src="../../assets/images/elements/titan-water-surface.png" alt="水面" />
+        <img
+          id="titan"
+          src="../../assets/images/elements/titan_logo.png"
+          alt="kdan"
+        />
+        <img
+          class="ice-water-surface"
+          src="../../assets/images/elements/titan-water-surface.png"
+          alt="水面"
+        />
       </div>
     </div>
     <div class="penguins">
       <div class="penguin1">
-        <img class="penguin" src="../../assets/images/elements/penguin1.png" alt="企鵝1" />
+        <img
+          class="penguin"
+          src="../../assets/images/elements/penguin1.png"
+          alt="企鵝1"
+        />
       </div>
       <div class="penguin2">
-        <img class="penguin" src="../../assets/images/elements/penguin3.png" alt="企鵝2" />
+        <img
+          class="penguin"
+          src="../../assets/images/elements/penguin3.png"
+          alt="企鵝2"
+        />
       </div>
       <div class="penguin3">
-        <img class="penguin" src="../../assets/images/elements/penguin2.png" alt="企鵝3" />
+        <img
+          class="penguin"
+          src="../../assets/images/elements/penguin2.png"
+          alt="企鵝3"
+        />
       </div>
     </div>
   </div>
@@ -78,12 +123,18 @@ export default {
         delay: 2,
       });
     },
-    penguinFlap() { },
+    penguinFlap() {},
   },
 };
 </script>
 
 <style lang="scss">
+@mixin pad {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
 .home3 {
   height: 100vh;
   width: 100vw;
@@ -106,7 +157,6 @@ export default {
   }
 
   .submarine-float {
-
     .submarine {
       position: absolute;
       bottom: 13vh;
