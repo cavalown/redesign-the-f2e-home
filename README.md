@@ -31,6 +31,24 @@ Vue Cli
 Vue 3
 
 ## Directors
+./src
+├── App.vue 
+├── assets
+│   └── images 靜態圖片
+├── components 元件components
+│   ├── Navbar.vue 
+│   └── homeComponents
+├── main.js
+├── router
+│   └── index.js 只有使用home
+├── store
+│   └── index.js 沒有用到
+├── style
+│   ├── _mixin.scss pad & phone
+│   ├── all.scss
+│   └── reset.scss
+└── views
+    └── Home.vue
 
 ## Third Party Services
 GSAP
