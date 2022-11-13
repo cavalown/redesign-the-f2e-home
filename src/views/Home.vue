@@ -6,9 +6,9 @@
     <div class="in-water panel" id="panel2">
       <Home2 />
     </div>
-    <div class="end-water panel" id="panel3">
-      <!-- <Home3 /> -->
-    </div>
+    <!-- <div class="end-water panel" id="panel3">
+      <Home3 />
+    </div> -->
   </div>
 </template>
 

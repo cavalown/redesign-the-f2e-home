@@ -18,6 +18,18 @@ export default {
 </script>
 
 <style lang="scss">
+@mixin pad {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media (max-width: 576px) {
+    @content;
+  }
+}
+
 .navbar {
   ul {
     display: flex;
@@ -25,6 +37,12 @@ export default {
     gap: 34px;
     margin-right: 25px;
     padding-top: 50px;
+
+    @include phone {
+      margin: 0 auto;
+      justify-content: space-around;
+      padding-top: 40px;
+    }
 
     li {
       font-weight: 400;

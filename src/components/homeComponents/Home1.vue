@@ -7,7 +7,7 @@
         <li>UI Design</li>
         <li>FrontEnd</li>
       </ul>
-      <p>滾動開始</p>
+      <p class="hint-word">滾動開始</p>
       <div class="hint">
         <img id="hint-arrow" src="../../assets/images/elements/arrow-down.png" alt="請向下滾動" />
       </div>
@@ -95,28 +95,71 @@ export default {
 </script>
 
 <style lang="scss">
+@mixin pad {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media (max-width: 576px) {
+    @content;
+  }
+}
+
 .home1 {
   width: 100vw;
   height: 100vh;
   background-color: #fff;
-  background-image: url("../../assets/images/background/background1.svg");
+  background: url("../../assets/images/background/background1.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   position: relative;
 
-  // @include pad {
-  //   background-image: url("../../assets/images/background/background1.svg");
-  // }
+  @include pad {}
+
+  @include phone {
+    // url(img_flwr.gif) right bottom no-repeat,url(paper.gif) left top repeat;
+    // background-color: #3eb1ee;
+    background-image: url("../../assets/images/background/bg-mobile1.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
 
   .title {
     margin-top: 166px;
+
+    @include pad {
+      margin-top: 80px;
+    }
+
+    @include phone {
+      margin-top: 100px;
+    }
 
     h1 {
       margin-bottom: 35px;
       color: #2a99d9;
       font-size: 36px;
       font-weight: 400;
+      line-height: 18px;
+      font-family: 'Noto Sans TC', sans-serif;
+
+      @include phone {
+        margin-bottom: 0;
+        text-align: justify;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 0;
+
+        &::after {
+          display: inline-block;
+          width: 100%;
+          content: "";
+        }
+      }
     }
 
     ul {
@@ -127,13 +170,23 @@ export default {
       color: #2a99d9;
       font-size: 24px;
       font-weight: 400;
+
+      @include phone {
+        margin-top: 15px;
+        width: calc(100% - 60px);
+        letter-spacing: 5px;
+      }
     }
 
-    p {
+    .hint-word {
       margin-top: 29px;
       color: #2a99d9;
       font-size: 14px;
       font-weight: 700;
+
+      @include phone {
+        display: none;
+      }
     }
 
     .hint {
@@ -143,6 +196,10 @@ export default {
       height: 50px;
       border-radius: 80px;
       background-color: #fff;
+
+      @include phone {
+        display: none;
+      }
     }
   }
 
@@ -153,12 +210,25 @@ export default {
       left: 20vw;
       height: 218px;
       width: 264px;
+
+      @include phone {
+        width: calc(264px * 0.8);
+        height: calc(218px * 0.8);
+        left: 28vw;
+        bottom: 30vh;
+      }
     }
 
     .water-surface {
       position: absolute;
       bottom: 17.5vh;
       left: 20.5vw;
+
+      @include phone {
+        width: calc(264px * 0.8);
+        left: 29vw;
+        bottom: 26.7vh;
+      }
     }
   }
 
